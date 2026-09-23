@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data files — do NOT commit the dataset (Kaggle ToS)
+*.csv
+*.xlsx
+*.xls
+data/
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# IDE
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
