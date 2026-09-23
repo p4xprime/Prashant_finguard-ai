@@ -1,22 +1,31 @@
+# ============================================================
 # FinGuard AI — Requirements
 # Bank Credit & Loan Default Risk Analytics Engine
 # IBM SkillsBuild Academic Internship | BharatCares & AICTE
+# Student: Prashant
+# File: requirements.txt
+# ============================================================
 
-# ── Core Framework ─────────────────────────────────────────────────────────
+# ── Core Framework ───────────────────────────────────────────
 streamlit>=1.35.0
 
-# ── Data Processing ────────────────────────────────────────────────────────
+# ── Data Processing ──────────────────────────────────────────
 pandas>=2.0.0
 numpy>=1.26.0
 openpyxl>=3.1.0
 
-# ── Machine Learning ───────────────────────────────────────────────────────
+# ── Machine Learning ─────────────────────────────────────────
 scikit-learn>=1.4.0
 xgboost>=2.0.0
 
-# ── Visualisation ──────────────────────────────────────────────────────────
+# ── Visualisation ────────────────────────────────────────────
 plotly>=5.20.0
 
-# ── IBM watsonx.ai SDK ─────────────────────────────────────────────────────
-# Optional: only required if using IBM watsonx.ai AI insights
+# ── Jupyter Notebook Support ─────────────────────────────────
+jupyter>=1.0.0
+notebook>=7.0.0
+ipykernel>=6.0.0
+
+# ── IBM watsonx.ai SDK ───────────────────────────────────────
+# Required for AI-powered risk narratives (Tab 6 in app)
 ibm-watsonx-ai>=1.1.0

@@ -1,31 +1,23 @@
-# 🏦 FinGuard AI
+﻿# 🏦 FinGuard AI
 ## Bank Credit & Loan Default Risk Analytics Engine
 
 > **IBM SkillsBuild Data Analytics with AI — Academic Internship Program**
-> BharatCares & AICTE | Student: **Prashant**
+> BharatCares & AICTE | **Student: Prashant**
+
+[![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.35+-red)](https://streamlit.io)
+[![IBM watsonx.ai](https://img.shields.io/badge/IBM-watsonx.ai-0f62fe)](https://dataplatform.cloud.ibm.com)
+[![License: Academic](https://img.shields.io/badge/License-Academic-green)](https://skillsbuild.org)
 
 ---
 
-## 📌 Project Overview
+## 📌 Project Description
 
-FinGuard AI is a production-ready, end-to-end credit risk analytics application built with Python and Streamlit. It combines classical machine learning, professional data visualisation, and IBM watsonx.ai generative AI to deliver a comprehensive loan default risk assessment platform.
+FinGuard AI is a production-ready, end-to-end credit risk analytics engine that predicts whether a loan applicant will default on their bank credit obligation. It combines classical machine learning, interactive Plotly visualisations, and IBM watsonx.ai generative AI (Granite) to deliver a comprehensive decision-support platform for credit risk analysts.
+
+**Key Design Principle:** The application **auto-detects all column names, data types, and the target variable** from the uploaded dataset — no column names are hardcoded anywhere in the codebase. The app adapts to the actual Kaggle dataset automatically.
 
 **Domain:** Finance & Banking — Credit Risk & Loan Default Prediction
-
----
-
-## 🎯 Key Features
-
-| Feature | Description |
-|---|---|
-| **Auto Column Detection** | Detects all column names, types, target variable, and ID columns dynamically — no hardcoded column names |
-| **Data Profiling** | Full schema inspection: dtypes, missing values, duplicates, cardinality, class imbalance |
-| **Exploratory Data Analysis** | 8-panel EDA: distributions, correlations, box plots, outliers, scatter matrix |
-| **7 ML Classifiers** | Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, XGBoost, KNN, Naive Bayes |
-| **Model Evaluation** | ROC curves, PR curves, confusion matrices, feature importance, cross-validation |
-| **Risk Predictor** | Real-time loan applicant risk scoring with 5-tier risk classification |
-| **IBM watsonx.ai** | AI risk narratives, EDA insights & model commentary using IBM Granite |
-| **Excel Export** | 7-sheet professional Excel report with styled tables and summaries |
 
 ---
 
@@ -33,46 +25,66 @@ FinGuard AI is a production-ready, end-to-end credit risk analytics application 
 
 ```
 FinGuard-AI/
-│
-├── app.py                    # Main Streamlit application
-├── requirements.txt          # Python dependencies
-├── README.md                 # This file
+├── app.py                         Main Streamlit application (7 tabs)
+├── Prashant_FinGuardAI.ipynb      Complete Jupyter Notebook
+├── Prashant_ProjectReport.docx    Full project documentation
+├── requirements.txt               Python dependencies
+├── README.md                      This file
 │
 └── utils/
     ├── __init__.py
-    ├── data_loader.py        # Auto-detection engine & preprocessing
-    ├── eda.py                # EDA charts and statistics
-    ├── model_engine.py       # ML training, evaluation, prediction
-    ├── watsonx_client.py     # IBM watsonx.ai integration
-    └── report_generator.py   # Excel report generation
+    ├── data_loader.py             Auto-detection engine & preprocessing
+    ├── eda.py                     EDA charts and statistics (8 panels)
+    ├── model_engine.py            ML training, evaluation, prediction
+    ├── watsonx_client.py          IBM watsonx.ai integration
+    └── report_generator.py        Excel report generation (7 sheets)
 ```
 
 ---
 
-## 🛠️ Technology Stack
+## 🗄️ Dataset
 
-| Technology | Purpose |
+| Field | Details |
 |---|---|
-| Python 3.10+ | Core language |
-| Streamlit ≥ 1.35 | Web application framework |
-| Pandas + NumPy | Data manipulation |
-| Scikit-Learn | ML algorithms & evaluation |
-| XGBoost | Gradient boosted trees |
-| Plotly | Interactive visualisations |
-| OpenPyXL | Excel report generation |
-| IBM watsonx.ai | AI-powered insights (Granite LLM) |
+| **Name** | Bank Credit Default — Loan Default Prediction |
+| **Source** | Kaggle — kornilovag94 |
+| **URL** | https://www.kaggle.com/datasets/kornilovag94/bank-credit-default-loan-default |
+| **Format** | CSV |
+| **Domain** | Banking & Finance — Credit Risk |
+
+> ⚠️ **Dataset Integrity Rule:** This project does NOT fabricate, generate, or assume any dataset structure. Upload the actual Kaggle CSV — the app auto-detects all columns at runtime.
 
 ---
 
-## 📦 Installation
+## 🛠️ Technologies Used
 
-### 1. Clone / Download the project
+| Technology | Version | Purpose |
+|---|---|---|
+| Python | 3.10+ | Core language |
+| Streamlit | ≥ 1.35.0 | Web application framework |
+| Pandas | ≥ 2.0.0 | Data manipulation |
+| NumPy | ≥ 1.26.0 | Numerical computing |
+| Scikit-Learn | ≥ 1.4.0 | ML algorithms & evaluation |
+| XGBoost | ≥ 2.0.0 | Gradient boosted trees |
+| Plotly | ≥ 5.20.0 | Interactive visualisations |
+| OpenPyXL | ≥ 3.1.0 | Excel report export |
+| IBM watsonx.ai SDK | ≥ 1.1.0 | Granite LLM integration |
+| Jupyter | ≥ 1.0.0 | Notebook environment |
+
+---
+
+## ⚙️ Setup & Run Instructions
+
+### 1. Download the dataset
+Download the CSV from Kaggle: https://www.kaggle.com/datasets/kornilovag94/bank-credit-default-loan-default
+
+### 2. Clone the repository
 ```bash
-git clone <your-repo-url>
-cd FinGuard-AI
+git clone https://github.com/p4xprime/finguard-ai.git
+cd finguard-ai
 ```
 
-### 2. Create a virtual environment (recommended)
+### 3. Create a virtual environment (recommended)
 ```bash
 python -m venv venv
 
@@ -83,66 +95,73 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### 3. Install dependencies
+### 4. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the application
+### 5. Run the Streamlit application
 ```bash
-streamlit run app.py
+python -m streamlit run app.py
+```
+Open your browser at: **http://localhost:8501**
+
+### 6. Run the Jupyter Notebook (alternative)
+```bash
+jupyter notebook Prashant_FinGuardAI.ipynb
 ```
 
-The app will open at `http://localhost:8501`
-
 ---
 
-## 📊 Dataset
+## 🚀 Features
 
-**Dataset:** Bank Credit Default — Loan Default Prediction
-**Source:** [Kaggle — kornilovag94](https://www.kaggle.com/datasets/kornilovag94/bank-credit-default-loan-default)
+### 📊 Tab 1 — Data Overview
+- Auto-detected column classification (Numeric / Categorical / Binary / Target / ID)
+- Target variable analysis and class imbalance severity
+- Summary statistics with skewness and kurtosis
+- Raw data preview
 
-**To use the dataset:**
-1. Download the dataset from the Kaggle URL above
-2. Upload the CSV file using the sidebar file uploader in the app
+### 🔍 Tab 2 — Exploratory Data Analysis (8 Panels)
+- Target distribution (bar + pie)
+- Numeric feature distributions (histogram grid)
+- Categorical distributions (top-10 bar charts)
+- Correlation heatmap (lower triangle)
+- Box plots by target class
+- Scatter matrix (top 5 features)
+- Missing values analysis
+- Outlier detection (IQR method)
 
-> ⚠️ **Important:** This application does **not** fabricate or generate any dataset.
-> It works exclusively with the actual Kaggle dataset uploaded by the user.
-> All column detection, feature engineering, and analysis are performed dynamically.
+### 🤖 Tab 3 — Model Training
+- 7 classifiers: Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, XGBoost, KNN, Naive Bayes
+- Stratified train/test split (configurable)
+- 5-fold cross-validation
+- Grouped metrics comparison chart
 
----
+### 🏆 Tab 4 — Model Evaluation
+- ROC curves (all models overlaid)
+- Precision-Recall curves
+- Confusion matrix with TP/TN/FP/FN breakdown
+- Feature importance (top 25)
+- Full classification report
 
-## 🤖 IBM watsonx.ai Setup (Optional)
+### 🔮 Tab 5 — Risk Predictor
+- Dynamic input form auto-generated from actual training features
+- Real-time prediction with 5-tier risk classification
+- Probability gauge bar
+- IBM Granite AI narrative (optional)
 
-To enable AI-powered risk narratives and insights:
+### 🤖 Tab 6 — AI Insights (IBM watsonx.ai)
+- EDA insights via IBM Granite-13B-Instruct
+- Model performance insights via IBM Granite-13B-Instruct
 
-1. Create an [IBM Cloud account](https://cloud.ibm.com)
-2. Provision IBM watsonx.ai service
-3. Navigate to IAM → API Keys → Create a new API key
-4. Create or open a watsonx.ai project and copy the Project ID
-5. Enter credentials in the FinGuard AI sidebar under **IBM watsonx.ai**
-
-The app uses the **ibm/granite-13b-instruct-v2** foundation model.
-
----
-
-## 🔧 Application Tabs
-
-| Tab | Contents |
-|---|---|
-| 📊 Data Overview | Column classification, target analysis, summary stats, raw data preview |
-| 🔍 EDA | 8-panel exploratory analysis with interactive Plotly charts |
-| 🤖 Model Training | Pipeline description, training controls, metrics summary |
-| 🏆 Model Evaluation | ROC curves, PR curves, confusion matrix, feature importance |
-| 🔮 Risk Predictor | Dynamic input form, real-time prediction, AI narrative |
-| 🤖 AI Insights | EDA insights + model insights via IBM Granite |
-| 📥 Export Report | 7-sheet styled Excel report download |
+### 📥 Tab 7 — Export Report
+- 7-sheet styled Excel report download
 
 ---
 
 ## 🚦 Risk Tiers
 
-| Probability | Tier |
+| Probability | Risk Tier |
 |---|---|
 | ≥ 75% | 🔴 Very High Risk |
 | 55–75% | 🟠 High Risk |
@@ -152,16 +171,45 @@ The app uses the **ibm/granite-13b-instruct-v2** foundation model.
 
 ---
 
+## 🤖 IBM watsonx.ai Setup (Optional)
+
+To enable AI-powered insights:
+
+1. Create an IBM Cloud account: https://cloud.ibm.com
+2. Provision IBM watsonx.ai
+3. Create an API key: IAM → API Keys → Create
+4. Copy your watsonx.ai Project ID
+5. Enter credentials in the FinGuard AI sidebar under **IBM watsonx.ai**
+
+**Model used:** `ibm/granite-13b-instruct-v2`
+
+---
+
+## 📁 Submitted Files
+
+| File | Format | Description |
+|---|---|---|
+| `Prashant_FinGuardAI.ipynb` | `.ipynb` | Complete project code (Jupyter Notebook) |
+| `requirements.txt` | `.txt` | Python dependencies list |
+| `Prashant_ProjectReport.docx` | `.docx` | Full project documentation (15 sections) |
+| `README.md` | `.md` | This file — project overview |
+
+---
+
 ## 🎓 Academic Information
 
-- **Program:** IBM SkillsBuild Data Analytics with AI
-- **Internship Provider:** BharatCares
-- **Approved By:** AICTE (All India Council for Technical Education)
-- **Student:** Prashant
-- **Project Title:** FinGuard AI — Bank Credit and Loan Default Risk Analytics Engine
+| Field | Details |
+|---|---|
+| Program | IBM SkillsBuild Data Analytics with AI |
+| Internship Provider | BharatCares |
+| Approved By | AICTE (All India Council for Technical Education) |
+| Student | Prashant |
+| Project Title | FinGuard AI — Bank Credit and Loan Default Risk Analytics Engine |
+| GitHub | https://github.com/p4xprime/finguard-ai |
 
 ---
 
 ## 📝 License
 
-This project is developed for academic purposes as part of the IBM SkillsBuild internship program.
+This project is developed for academic purposes as part of the IBM SkillsBuild internship program.  
+Dataset is sourced from Kaggle under its respective terms of service.
