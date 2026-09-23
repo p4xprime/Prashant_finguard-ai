@@ -7,7 +7,7 @@ using IBM Granite foundation models.
 from __future__ import annotations
 
 import os
-from typing import Optional
+from typing import Any, Optional
 
 
 # ---------------------------------------------------------------------------
@@ -173,7 +173,7 @@ class WatsonxClient:
         self.api_key = api_key
         self.project_id = project_id
         self.url = url
-        self._model = None
+        self._model: Any = None
         self._connected = False
         self._error: Optional[str] = None
 
