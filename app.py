@@ -196,6 +196,40 @@ section[data-testid="stSidebar"] .stCheckbox label {
     font-weight: 500 !important;
 }
 
+/* ── Upload Button — dark theme ──────────────────────────── */
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] {
+    background: #002080 !important;
+    border: 1px solid #4589ff !important;
+    border-radius: 8px !important;
+    padding: 0.5rem !important;
+}
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] label {
+    color: #a6c8ff !important;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+}
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] {
+    background: #001450 !important;
+    border: 2px dashed #4589ff !important;
+    border-radius: 6px !important;
+}
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] *,
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzoneInstructions"] * {
+    color: #a6c8ff !important;
+}
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button,
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] [data-testid="baseButton-secondary"] {
+    background: #0f62fe !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+}
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button:hover,
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] [data-testid="baseButton-secondary"]:hover {
+    background: #0043ce !important;
+}
+
 /* ── Progress / spinner colour ───────────────────────────── */
 .stProgress .st-bo { background-color: #0f62fe; }
 
