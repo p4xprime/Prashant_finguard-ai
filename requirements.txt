@@ -1,4 +1,4 @@
-# ============================================================
+﻿# ============================================================
 # FinGuard AI — Requirements
 # Bank Credit & Loan Default Risk Analytics Engine
 # IBM SkillsBuild Academic Internship | BharatCares & AICTE
@@ -21,11 +21,5 @@ xgboost>=2.0.0
 # ── Visualisation ────────────────────────────────────────────
 plotly>=5.20.0
 
-# ── Jupyter Notebook Support ─────────────────────────────────
-jupyter>=1.0.0
-notebook>=7.0.0
-ipykernel>=6.0.0
-
 # ── IBM watsonx.ai SDK ───────────────────────────────────────
-# Required for AI-powered risk narratives (Tab 6 in app)
 ibm-watsonx-ai>=1.1.0

@@ -37,10 +37,13 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score, train_test
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
-from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.utils.class_weight import compute_class_weight
-import xgboost as xgb
+
+try:
+    import xgboost as xgb
+    _XGB_AVAILABLE = True
+except ImportError:
+    _XGB_AVAILABLE = False
 
 warnings.filterwarnings("ignore")
 
@@ -81,11 +84,11 @@ def _get_model_registry(class_weight: str = "balanced") -> dict[str, Any]:
         "Gradient Boosting": GradientBoostingClassifier(
             n_estimators=200, max_depth=5, random_state=42
         ),
-        "XGBoost": xgb.XGBClassifier(
-            n_estimators=200, max_depth=6, use_label_encoder=False,
+        **({"XGBoost": xgb.XGBClassifier(
+            n_estimators=200, max_depth=6,
             eval_metric="logloss", random_state=42,
-            scale_pos_weight=1,  # will be updated if imbalanced
-        ),
+            scale_pos_weight=1,
+        )} if _XGB_AVAILABLE else {}),
         "K-Nearest Neighbours": KNeighborsClassifier(n_neighbors=7, n_jobs=-1),
         "Naive Bayes": GaussianNB(),
     }
@@ -163,13 +166,7 @@ def train_models(
 
     for name, model in registry.items():
         t0 = time.time()
-        try:
-            model.fit(X_train, y_train)
-        except Exception:
-            # XGBoost fallback without deprecated param
-            if hasattr(model, "set_params"):
-                model.set_params(use_label_encoder=False)
-            model.fit(X_train, y_train)
+        model.fit(X_train, y_train)
 
         elapsed = time.time() - t0
 
